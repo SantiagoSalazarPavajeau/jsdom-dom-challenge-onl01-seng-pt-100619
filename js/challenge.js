@@ -3,15 +3,19 @@
 // dom functions after load
 
 // count
-function count (counter = 0){
-      counter += 1
-    count(counter)
-    }
-let timeout = window.setTimeout(count(), 1*1000)
+// use a count function inside of the setTimeout method, the count increases the number by one and the function calls itself afterwards
+
+let seconds = 0;
+let counter = document.getElementById('counter');
+
+
+function count(){
+    seconds += 1;
+    counter.innerText = seconds;
+
+}
+
+let interval = setInterval(count, 1000);
 
 
 
-
-document.addEventListener("DOMContentLoaded", function(e){
-    
-});
