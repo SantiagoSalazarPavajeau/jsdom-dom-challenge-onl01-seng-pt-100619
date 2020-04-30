@@ -21,6 +21,10 @@ function count(){
 }
 document.addEventListener("DOMContentLoaded",(event) => {
     setInterval(count, 1000);
+    minus.addEventListener("click", function(e){
+        seconds -= 1;
+        counter.innerText = seconds;
+    });
     
 } );
 
