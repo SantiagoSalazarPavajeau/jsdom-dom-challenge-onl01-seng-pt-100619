@@ -7,7 +7,6 @@
 
 let seconds = 0;
 let counter = document.getElementById('counter');
-let plus = document.getElementById('plus');
 let heart = document.getElementById('heart');
 let pause = document.getElementById('pause');
 let likes = document.getElementById('likes');
@@ -26,6 +25,12 @@ document.addEventListener("DOMContentLoaded",(event) => {
         seconds -= 1; 
         counter.innerText = seconds;
         //add minus button event listener logic with minus equal 1 on minutes and a setter of the counter h1 tag of the innertext
+    });
+    let plus = document.getElementById('plus');
+    plus.addEventListener("click", function(e){
+        seconds += 1; 
+        counter.innerText = seconds;
+        //add plus button event listener logic with plus equal 1 on minutes and a setter of the counter h1 tag of the innertext
     });
     
 } );
