@@ -7,9 +7,6 @@
 
 let seconds = 0;
 let counter = document.getElementById('counter');
-let heart = document.getElementById('heart');
-let pause = document.getElementById('pause');
-let likes = document.getElementById('likes');
 // add variables for button tags by id and call event listeners on these variables that contain the "buttons"
 
 function count(){
@@ -19,7 +16,8 @@ function count(){
 }
 document.addEventListener("DOMContentLoaded",(event) => {
     // setInterval function is defined in the global scope, and the function count is defined only with the add logic and seting the innertext, the seconds and html tag are defined outside the scope of the count function. the seconds are set as a 0 integer and setting seconds as value of the element creates a NAN
-    setInterval(count, 1000);
+    let interval = setInterval(count, 1000);
+
     let minus = document.getElementById('minus');
     minus.addEventListener("click", function(e){
         seconds -= 1; 
@@ -32,6 +30,26 @@ document.addEventListener("DOMContentLoaded",(event) => {
         counter.innerText = seconds;
         //add plus button event listener logic with plus equal 1 on minutes and a setter of the counter h1 tag of the innertext
     });
+    let heart = document.getElementById('heart');
+    let likes = document.querySelector('ul');
+    let likeComment = document.createElement('li')
+    heart.addEventListener("click", function(e){
+        likeComment.innerText = `I liked the ${seconds} second.`;
+        likes.appendChild(comments);
+    });
+    let pause = document.getElementById('pause');
+    pause.addEventListener('click', function(e){
+        clearInterval(interval);
+    })
+    let form = document.getElementById("comment-form")
+    form.addEventListener("submit", function(e){
+        e.preventDefault()
+        let text = document.getElementById("comment-input").value
+        let comment = document.createElement("p")
+        let div = document.getElementById("list")
+        comment.innerText = text;
+        div.appendChild(comment);
+    })
     
 } );
 
