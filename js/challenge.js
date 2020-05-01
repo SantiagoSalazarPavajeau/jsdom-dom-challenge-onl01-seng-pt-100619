@@ -36,11 +36,11 @@ document.addEventListener("DOMContentLoaded",(event) => {
     heart.addEventListener("click", function(e){
         likeComment.innerText = `I liked the ${seconds} second.`;
         likes.appendChild(comments);
-    });
+    });    // add event listeners for heart appending comments to the likes list element and interpolating the seconds variable
     let pause = document.getElementById('pause');
     pause.addEventListener('click', function(e){
         clearInterval(interval);
-    })
+    }) // add evlist to pause by calling the clearinterval after setting the set interval to a variable
     let form = document.getElementById("comment-form")
     form.addEventListener("submit", function(e){
         e.preventDefault()
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded",(event) => {
         let div = document.getElementById("list")
         comment.innerText = text;
         div.appendChild(comment);
-    })
+    }) // add evlist to the form element on the submit event and preventing default post request, obtaining the text using a get element by id on the input tag creating a p tag and inserting it to the list div element
     
 } );
 
